@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Date Tracker</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+  <div class="header" ><img src="etc_logo.png" alt="ETC Job Date Tracker" name="Insert_logo" width="144" height="122" style="display:block; padding-top:15px; padding-left:15px; "/>
+    <!-- end .header --></div> 
+    
+    <div id ="Menu" class="MenuDiv">
+    <ul class="MenuItem">
+    <li><%= link_to 'Home', jobs_path %></li> 
+    </ul>
+    
+    <ul class="MenuItem">
+    <li>JDT</li>
+    </ul>
+    
+    <ul class="MenuItem">
+    <li>Job Board</li>
+    </ul>
+    
+    <ul class="MenuItem">
+    <li>Machine Status</li>
+    </ul>
+<!-- End .MenuDiv and Container div -->    </div> </div>
+<div id="Container" class="content">
+<%= yield %>
+</div>
+</body>
+</html>

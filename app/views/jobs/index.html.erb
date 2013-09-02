@@ -1,0 +1,32 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Static Testing</th>
+      <th>Dynamic Testing</th>
+      <th>Frame</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.name %></td>
+        <td><%= check_box_tag 'job', 'statictesting', job.statictesting, :disabled => true %></td>
+        <td><%= check_box_tag 'job', 'dynamictesting', job.dynamictesting, :disabled => true %></td>
+        <td><%= job.frame %></td>
+        <td><%= link_to 'Show', job, :class => "jobbtn" %></td>
+        <td><%= link_to 'Edit', edit_job_path(job), :class => "jobbtn" %></td>
+        <td><%= link_to 'Destroy', job, :class => "jobbtn", method: :delete, data: { confirm: "Delete Job #{job.name}?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+      <%= button_to 'New Job', new_job_path, :class =>"button_centered", :method=> :get %>
+
+<br>
+
